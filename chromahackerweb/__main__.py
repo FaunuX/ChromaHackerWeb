@@ -5,9 +5,20 @@ app = Flask(__name__)
 
 @app.route('/palettize', methods=['GET'])
 def palettize_endpoint():
-    url, arg0, arg1, arg2 = request.args.get('url'), request.args.get('arg0'), request.args.get('arg1'), request.args.get('arg2')
+    url = request.args.to_dict()['url']
 
-    palettize(url, arg0, arg1, arg2)
+    args = []
+    i = 0
+    while True:
+        if 'arg' + str(i) in request.args.to_dict():
+            args.append(request.args.get('arg' + str(i)))
+            i += 1
+        else:
+            break
+
+
+
+    palettize(url, *args)
 
     return send_file('../wallpaper.jpg', mimetype='image/jpg')
 
