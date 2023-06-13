@@ -1,5 +1,25 @@
 const myForm = document.getElementById('form');
 const addButton = document.getElementById('addButton');
+const removeButton = document.getElementById('removeButton');
+
+function convertButtonToArg(str) {
+	  // Use a regular expression to match "button" followed by a number
+	  const regex = /^button(\d+)$/;
+
+	  // Check if the input string matches the expected pattern
+	  if (regex.test(str)) {
+		      // Extract the number from the string
+		      const match = str.match(regex);
+		      const number = match[1];
+
+		      // Return the modified string "arg" + number
+		      return "arg" + number;
+		    }
+
+	  // Return the original string if it doesn't match the pattern
+	  return str;
+}
+
 
 // Track the count of input elements
 let inputCount = 0;
@@ -12,10 +32,39 @@ addButton.addEventListener('click', function(event) {
 	newInput.type = 'color';
 	newInput.class = 'input';
 	newInput.name = `arg${inputCount}`;
+	newInput.id = `arg${inputCount}`;
+	const newButton = document.createElement('button');
+	newButton.type = 'button';
+	// newInput.class = 'input';
+	// newInput.name = `arg${inputCount}`;
+	newButton.id = `button${inputCount}`;
+	newButton.textContent = 'X'
+
+	newButton.addEventListener('click', function(event) {
+		// Create a new input element
+		event.preventDefault(); // Prevent form submission
+		const oldInput = document.getElementById(convertButtonToArg(newButton.id));
+
+		oldInput.remove()
+		newButton.remove()
+
+	});
 
 	// Append the new input element to the form
 	myForm.appendChild(newInput);
+	myForm.appendChild(newButton);
 
 	// Increment the input count
 	inputCount++;
+});
+
+removeButton.addEventListener('click', function(event) {
+	// Create a new input element
+	event.preventDefault(); // Prevent form submission
+	const oldInput = document.getElementById(`arg${inputCount - 1}`);
+
+	oldInput.remove()
+
+	// Increment the input count
+	inputCount--;
 });
