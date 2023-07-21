@@ -1,3 +1,5 @@
+import webbrowser
+
 from flask import Flask, request, send_file, render_template
 from chromahacker.palettize import palettize
 
@@ -28,4 +30,5 @@ def main():
     return render_template('index.html')
 
 if __name__ == '__main__':
+    webbrowser.open('http://localhost:5000')
     app.run()
