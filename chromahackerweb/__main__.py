@@ -30,6 +30,6 @@ def palettize_endpoint():
 def main():
     return render_template('index.html')
 
-if __name__ == '__main__':
+def run():
     webbrowser.open('http://localhost:5000')
     app.run()
