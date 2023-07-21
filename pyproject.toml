@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "chromahackerweb"
-version = "0.1.1"
+version = "0.1.2"
 description = ""
 authors = ["FaunuX <judahpspiegel@gmail.com>"]
 readme = "README.md"
@@ -8,7 +8,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.11"
 flask = "^2.3.2"
-chromahacker = "^0.2.4"
+chromahacker = "^0.2.5"
 
 [tool.poetry.scripts]
 chromahackerweb = "chromahackerweb.__main__:run"

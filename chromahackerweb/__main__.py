@@ -1,3 +1,4 @@
+import os
 import webbrowser
 
 from flask import Flask, request, send_file, render_template
@@ -24,7 +25,7 @@ def palettize_endpoint():
     accurate = not "accuracy" in request.args.to_dict()
     palettize(url, OUTPUT, *args, accurate=accurate)
 
-    return send_file('../wallpaper.' + OUTPUT, mimetype='image/' + OUTPUT)
+    return send_file(os.getcwd() + '/wallpaper.' + OUTPUT, mimetype='image/' + OUTPUT)
 
 @app.route('/')
 def main():
