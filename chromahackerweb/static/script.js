@@ -28,6 +28,7 @@ let inputCount = 0;
 addButton.addEventListener('click', function(event) {
 	// Create a new input element
 	event.preventDefault(); // Prevent form submission
+	const div = document.createElement('div');
 	const newInput = document.createElement('input');
 	newInput.type = 'color';
 	newInput.class = 'input';
@@ -47,24 +48,16 @@ addButton.addEventListener('click', function(event) {
 
 		oldInput.remove()
 		newButton.remove()
+		inputCount--;
 
 	});
 
 	// Append the new input element to the form
-	myForm.appendChild(newInput);
-	myForm.appendChild(newButton);
+	div.appendChild(newInput);
+	div.appendChild(newButton);
+	myForm.appendChild(div);
+
 
 	// Increment the input count
 	inputCount++;
-});
-
-removeButton.addEventListener('click', function(event) {
-	// Create a new input element
-	event.preventDefault(); // Prevent form submission
-	const oldInput = document.getElementById(`arg${inputCount - 1}`);
-
-	oldInput.remove()
-
-	// Increment the input count
-	inputCount--;
 });

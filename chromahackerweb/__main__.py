@@ -3,9 +3,12 @@ from chromahacker.palettize import palettize
 
 app = Flask(__name__)
 
+OUTPUT = "png"
+
 @app.route('/palettize', methods=['GET'])
 def palettize_endpoint():
     url = request.args.to_dict()['url']
+    print(request.args.to_dict())
 
     args = []
     i = 0
@@ -16,11 +19,9 @@ def palettize_endpoint():
         else:
             break
 
+    palettize(url, OUTPUT, *args, accurate=True)
 
-
-    palettize(url, *args)
-
-    return send_file('../wallpaper.jpg', mimetype='image/jpg')
+    return send_file('../wallpaper.' + OUTPUT, mimetype='image/' + OUTPUT)
 
 @app.route('/')
 def main():

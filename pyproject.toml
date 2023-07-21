@@ -7,8 +7,8 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-chromahacker = "^0.1.4"
 flask = "^2.3.2"
+chromahacker = "^0.2.4"
 
 
 [build-system]
