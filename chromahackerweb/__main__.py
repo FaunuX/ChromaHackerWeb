@@ -21,7 +21,8 @@ def palettize_endpoint():
         else:
             break
 
-    palettize(url, OUTPUT, *args, accurate=True)
+    accurate = not "accuracy" in request.args.to_dict()
+    palettize(url, OUTPUT, *args, accurate=accurate)
 
     return send_file('../wallpaper.' + OUTPUT, mimetype='image/' + OUTPUT)
 

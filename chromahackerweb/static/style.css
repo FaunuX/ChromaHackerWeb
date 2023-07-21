@@ -1,82 +1,145 @@
-/* Reset some default styles */
-body, h1, p, form {
-	margin: 0;
-	padding: 0;
-}
-
-/* Apply a background color to the body for the skeuomorphic effect */
+/* Body styles */
 body {
-	background-color: #f0f0f0; /* Light gray to simulate paper texture */
-	font-family: Arial, sans-serif;
-}
-
-/* Apply a border and box-shadow to create a card-like appearance */
-form {
-	margin: 20px;
+	background-color: #111;
+	color: #fff;
+	font-family: "Roboto", sans-serif;
+	margin: 0;
 	padding: 20px;
-	background-color: #ffffff; /* White to simulate a paper/card */
-	border: 2px solid #cccccc; /* Gray border for depth */
-	border-radius: 10px; /* Rounded corners */
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
 }
 
-/* Style the title */
+/* Title styles */
 h1 {
+	font-size: 40px;
 	text-align: center;
-	margin-bottom: 20px;
-	font-size: 24px;
-	color: #333333; /* Dark gray */
+	margin-bottom: 30px;
+	text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.8);
 }
 
-/* Style the URL input field */
-input[type="url"] {
+/* Form styles */
+#form {
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+input[type="url"],
+input[type="color"] {
+	display: block;
+	width: 100%;
+	margin-bottom: 20px;
+	padding: 10px;
+	border: 2px solid #00ffcc;
+	border-radius: 5px;
+	background-color: #222;
+	color: #fff;
+}
+input[type="submit"], #addButton {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+input[type="submit"] {
+	display: block;
 	width: 100%;
 	padding: 10px;
-	margin-bottom: 10px;
-	border: 1px solid #cccccc; /* Gray border */
-	border-radius: 5px;
-}
-
-/* Style the "Add Input" button */
-#addButton {
-	display: block;
-	margin: 0 auto 20px;
-	background-color: #4caf50; /* Green */
-	color: #ffffff; /* White */
-	padding: 10px 20px;
 	border: none;
 	border-radius: 5px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	background-color: #00ffcc;
+	color: #111;
+	font-weight: bold;
 	cursor: pointer;
+	text-transform: uppercase;
 }
 
-/* Style the color input fields container */
-div {
-	display: flex;
-	align-items: center;
-	margin-bottom: 10px;
+input[type="submit"]:hover {
+	background-color: #33ffdd;
 }
 
-/* Style the color input fields */
-input[type="color"] {
+/* Checkbox styles */
+#accuracy {
+	display: inline-block;
 	margin-right: 10px;
-	border: 1px solid #cccccc; /* Gray border */
-	border-radius: 5px;
-	padding: 5px;
-}
-
-/* Style the "X" buttons */
-button {
-	background-color: #ff6347; /* Red */
-	color: #ffffff; /* White */
-	padding: 5px;
-	border: none;
-	border-radius: 50%; /* Make it a circle */
+	position: relative;
 	cursor: pointer;
 }
 
-/* Apply some hover effects to buttons */
-button:hover {
-	background-color: #e53935; /* Darker red on hover */
+#accuracy::before {
+	content: "";
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin-right: 5px;
+	border: 2px solid #00ffcc;
+	border-radius: 3px;
+	background-color: #111;
+}
+
+#accuracy::after {
+	content: "";
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 10px;
+	height: 10px;
+	border-radius: 2px;
+	background-color: #00ffcc;
+	opacity: 0;
+}
+
+#accuracy:hover::after {
+	opacity: 0.8;
+}
+
+#accuracy:checked::after {
+	opacity: 1;
+}
+
+/* Add Input button styles */
+#addButton {
+	display: inline-block;
+	padding: 10px 15px;
+	border: none;
+	border-radius: 5px;
+	background-color: #ff0066;
+	color: #00ffcc;
+	font-weight: bold;
+	cursor: pointer;
+	outline: none;
+	text-transform: uppercase;
+	transition: background-color 0.3s ease;
+}
+
+#addButton:hover {
+	background-color: #ff0088;
+}
+
+/* Neon glow effect */
+button:hover,
+input[type="submit"]:hover,
+#addButton:hover {
+	text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+}
+
+/* Container styles */
+div {
+	position: relative;
+}
+
+/* Close button 'X' styles */
+button[id^="button"] {
+	position: absolute;
+	top: -5px;
+	right: -5px;
+	width: 25px;
+	height: 25px;
+	background-color: #ff0066;
+	border: 2px solid #00ffcc;
+	border-radius: 50%;
+	color: #00ffcc;
+	font-weight: bold;
+}
+
+/* Additional glow effect for close buttons */
+button[id^="button"]:hover {
+	box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
 }
 
