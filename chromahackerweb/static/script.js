@@ -13,7 +13,7 @@ function convertButtonToArg(str) {
 		      const number = match[1];
 
 		      // Return the modified string "arg" + number
-		      return "arg" + number;
+		      return number;
 		    }
 
 	  // Return the original string if it doesn't match the pattern
@@ -29,6 +29,8 @@ addButton.addEventListener('click', function(event) {
 	// Create a new input element
 	event.preventDefault(); // Prevent form submission
 	const div = document.createElement('div');
+	div.className = 'colorInputDiv';
+	div.id = inputCount;
 	const newInput = document.createElement('input');
 	newInput.type = 'color';
 	newInput.class = 'input';
@@ -45,9 +47,19 @@ addButton.addEventListener('click', function(event) {
 		// Create a new input element
 		event.preventDefault(); // Prevent form submission
 		const oldInput = document.getElementById(convertButtonToArg(newButton.id));
+		console.log(document.getElementsByClassName('colorInputDiv'))
+		const elements = [...document.getElementsByClassName('colorInputDiv')]
+		elements.forEach(function(element) {
+			if (element.id > oldInput.id) {
+				id = element.id - 1;
+				element.id = id;
+				element.children[0].name = `arg${id}`;
+				element.children[0].id = `arg${id}`;
+				element.children[1].id = `button${id}`;
+			}
+		})
 
 		oldInput.remove()
-		newButton.remove()
 		inputCount--;
 
 	});
