@@ -13,13 +13,13 @@ files = [
 
 [[package]]
 name = "certifi"
-version = "2023.5.7"
+version = "2023.7.22"
 description = "Python package for providing Mozilla's CA Bundle."
 optional = false
 python-versions = ">=3.6"
 files = [
-    {file = "certifi-2023.5.7-py3-none-any.whl", hash = "sha256:c6c2e98f5c7869efca1f8916fed228dd91539f9f1b444c314c06eef02980c716"},
-    {file = "certifi-2023.5.7.tar.gz", hash = "sha256:0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"},
+    {file = "certifi-2023.7.22-py3-none-any.whl", hash = "sha256:92d6037539857d8206b8f6ae472e8b77db8058fec5937a1ef3f54304089edbb9"},
+    {file = "certifi-2023.7.22.tar.gz", hash = "sha256:539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"},
 ]
 
 [[package]]
@@ -108,13 +108,13 @@ files = [
 
 [[package]]
 name = "chromahacker"
-version = "0.2.5"
+version = "0.3.0"
 description = ""
 optional = false
 python-versions = ">=3.10,<4.0"
 files = [
-    {file = "chromahacker-0.2.5-py3-none-any.whl", hash = "sha256:3e70f5d228385f4d5a8cd03d15a0aa635540199c834ebd7cc28933a7cc81a60e"},
-    {file = "chromahacker-0.2.5.tar.gz", hash = "sha256:ccb04a8920e41fc1ae99e732312ba127a682c1653fb75e90113e94fd2f05d964"},
+    {file = "chromahacker-0.3.0-py3-none-any.whl", hash = "sha256:3894a830a96b3c2b30c05b0edefb49b2b2f020ab1e7a389f5a13cf0d9806efb4"},
+    {file = "chromahacker-0.3.0.tar.gz", hash = "sha256:57c9d7abe6cd188e0f1d9f47b95bfbff77b32a5eb438e42e31d45479ade4cea6"},
 ]
 
 [package.dependencies]
@@ -464,4 +464,4 @@ watchdog = ["watchdog (>=2.3)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "1df5f8a96a30e5808918869171b3ca7026f53d27bb0cb5fe1c0e57283cce5e2d"
+content-hash = "8f8dc43de3c50d167971b179021127d1a35c22585b6caf91aafce46c08fc7508"
