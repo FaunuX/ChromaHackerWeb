@@ -6,6 +6,8 @@ To use, simply run
 `pipx install chromahackerweb`
 `chromahackerweb`
 
+or try it online at (https://chromahacker.pythonanywhere.com)
+
 | Original             | Palettized                  |
 | -------------------  | -------------------------  |
 | ![](examples/monterey.jpg)   | ![](examples/monterey_palettized.png)   |
@@ -16,6 +18,6 @@ To use, simply run
 | ![](examples/windows_xp.jpg) | ![](examples/windows_xp_palettized.png) |
 
 
-See also: ![Lutgen](https://github.com/ozwaldorf/lutgen-rs), a similar project that was developed at around the same time as chromahacker.
+See also: [Lutgen](https://github.com/ozwaldorf/lutgen-rs), a similar project that was developed at around the same time as chromahacker.
 
 
