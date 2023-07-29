@@ -25,6 +25,7 @@ h1 {
 #custom_form, #premade_form {
 	max-width: 600px;
 	margin: 0 auto;
+	display: none;
 }
 
 .tab {
@@ -164,4 +165,3 @@ button[id^="button"] {
 button[id^="button"]:hover {
 	box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
 }
-
